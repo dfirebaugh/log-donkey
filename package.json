@@ -1,6 +1,6 @@
 {
   "name": "log-donkey",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "a simple logging tool that logs based on a set log level ",
   "main": "logDonkey.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "url": "https://github.com/dfirebaugh/logDonkey/issues"
   },
   "homepage": "https://github.com/dfirebaugh/logDonkey#readme",
-  "dependencies": {
+  "devDependencies": {
     "jest": "^24.9.0"
   }
 }
