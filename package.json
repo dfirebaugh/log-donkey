@@ -1,22 +1,22 @@
 {
-  "name": "loggy",
+  "name": "log-donkey",
   "version": "0.0.1",
-  "description": "a logging tool that logs based on a set log level ",
-  "main": "loggy.js",
+  "description": "a simple logging tool that logs based on a set log level ",
+  "main": "logDonkey.js",
   "scripts": {
     "test": "jest --watch",
     "test:ci": "jest --coverage"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dfirebaugh/loggy.git"
+    "url": "git+https://github.com/dfirebaugh/logDonkey.git"
   },
   "author": "Dustin Firebaugh",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dfirebaugh/loggy/issues"
+    "url": "https://github.com/dfirebaugh/logDonkey/issues"
   },
-  "homepage": "https://github.com/dfirebaugh/loggy#readme",
+  "homepage": "https://github.com/dfirebaugh/logDonkey#readme",
   "dependencies": {
     "jest": "^24.9.0"
   }

@@ -4,7 +4,7 @@ const INFO = 2;
 const DEBUG = 3;
 
 /**
- * loggy logs based on a set log level
+ * logDonkey logs based on a set log level
  * 
  * @method setLogLevel sets the logLevel
  * @method getLogLevel gets the current logLevel
@@ -13,7 +13,7 @@ const DEBUG = 3;
  * @method info logs an info message
  * @method debug logs a debug
  */
-module.exports = (function loggy(){
+module.exports = (function logDonkey(){
     let logLevel = ERROR; // default logLevel is ERROR
 
     const levels = {
@@ -34,12 +34,12 @@ module.exports = (function loggy(){
     }
 
     /**
-     * setLogLevel sets the logLevel for loggy
+     * setLogLevel sets the logLevel for logDonkey
      * 
      * @param {number} LEVEL 
      * @example
      * 
-     * loggy.setLogLevel(loggy.levels["DEBUG"])
+     * logDonkey.setLogLevel(logDonkey.levels["DEBUG"])
      * 
      * @returns logLevel as a number
      */
