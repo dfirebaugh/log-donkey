@@ -1,0 +1,23 @@
+{
+  "name": "loggy",
+  "version": "0.0.1",
+  "description": "a logging tool that logs based on a set log level ",
+  "main": "loggy.js",
+  "scripts": {
+    "test": "jest --watch",
+    "test:ci": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dfirebaugh/loggy.git"
+  },
+  "author": "Dustin Firebaugh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dfirebaugh/loggy/issues"
+  },
+  "homepage": "https://github.com/dfirebaugh/loggy#readme",
+  "dependencies": {
+    "jest": "^24.9.0"
+  }
+}
