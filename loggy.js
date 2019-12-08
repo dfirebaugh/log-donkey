@@ -14,7 +14,7 @@ const DEBUG = 3;
  * @method debug logs a debug
  */
 module.exports = (function loggy(){
-    let logLevel = ERROR;
+    let logLevel = ERROR; // default logLevel is ERROR
 
     const levels = {
         ERROR,
@@ -26,13 +26,23 @@ module.exports = (function loggy(){
     return {
         setLogLevel,
         getLogLevel,
-        levels,
+        levels: Object.freeze(levels), // freezing levels so that they can't be modified
         error,
         warning,
         debug,
         info
     }
 
+    /**
+     * setLogLevel sets the logLevel for loggy
+     * 
+     * @param {number} LEVEL 
+     * @example
+     * 
+     * loggy.setLogLevel(loggy.levels["DEBUG"])
+     * 
+     * @returns logLevel as a number
+     */
     function setLogLevel(LEVEL = 0){
         logLevel = LEVEL;
 
@@ -41,10 +51,19 @@ module.exports = (function loggy(){
         return logLevel;
     }
 
+    /**
+     * getLogLevel returns the logLevel that is currently set.
+     * @returns logLevel as a number
+     */
     function getLogLevel(){
         return logLevel
     }
 
+    /**
+     * error logs an error if the logLevel is set to log errors
+     * 
+     * @param  {...any} args -- whatever gets passed will be logged as the error
+     */
     function error(...args){
         if(loglevel < ERROR)
             return
@@ -52,6 +71,11 @@ module.exports = (function loggy(){
         return console.error.bind(global.console)
     }
 
+    /**
+     * warning logs a warning if the logLevel is set to log warnings
+     * 
+     * @param  {...any} args -- whatever gets passed in will be logged as a warning
+     */
     function warning(...args){
         if(logLevel < WARNING)
             return
@@ -59,13 +83,23 @@ module.exports = (function loggy(){
         console.warning("warning: ", ...args)
     }
 
+    /**
+     * info logs as info is logLevel is set to log info
+     * 
+     * @param  {...any} args -- whatever gets passed in will be logged as info
+     */
     function info(...args){
         if(logLevel < INFO)
-            return function (){}
+            return
 
-        return console.info.bind(global.console)
+        console.info("info: ", ...args)
     }
 
+    /**
+     * debug logs passed in arguments as debug, but only if the logLevel is set to DEBUG
+     * 
+     * @param  {...any} args -- whatever is passed in will logged as debug
+     */
     function debug(...args){
         if(logLevel < DEBUG)
             return
