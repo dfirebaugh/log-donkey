@@ -7,20 +7,32 @@ a simple logging tool that logs based on a set log level
 ### example
 
 ```javascript
+const log = require("log-donkey");
+
 // set the log level
-logDonkey.setLogLevel(logDonkey.levels[DEBUG]);
+log.setLogLevel(log.levels.DEBUG);
 
 // log an error
-logDonkey.error("this is an error message");
+log.error("this is an error message");
 
 // log a warning
-logDonkey.warning("this is a warning message");
+log.warn("this is a warning message");
 
 // log info
-logDonkey.info("logging some info");
+log.info("logging some info");
 
 // log a debug message
-logDonkey.debug("this is a debug message");
+log.debug("this is a debug message");
+```
+### es6 module example
+
+```javascript
+import log from "log-donkey"
+
+log.setLogLevel(log.levels.DEBUG);
+
+log.debug("some debug message here")
+
 ```
 
 ### LogLevels
