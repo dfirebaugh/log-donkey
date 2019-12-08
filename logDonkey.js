@@ -1,5 +1,5 @@
 const ERROR = 0;
-const WARNING = 1;
+const WARN = 1;
 const INFO = 2;
 const DEBUG = 3;
 
@@ -9,7 +9,7 @@ const DEBUG = 3;
  * @method setLogLevel sets the logLevel
  * @method getLogLevel gets the current logLevel
  * @method error logs an error
- * @method warning logs a warning
+ * @method WARN logs a warning
  * @method info logs an info message
  * @method debug logs a debug
  */
@@ -18,7 +18,7 @@ module.exports = (function logDonkey(){
 
     const levels = {
         ERROR,
-        WARNING,
+        WARN,
         INFO,
         DEBUG
     }
@@ -28,7 +28,7 @@ module.exports = (function logDonkey(){
         getLogLevel,
         levels: Object.freeze(levels), // freezing levels so that they can't be modified
         error,
-        warning,
+        warn,
         debug,
         info
     }
@@ -41,7 +41,7 @@ module.exports = (function logDonkey(){
      * 
      * logDonkey.setLogLevel(logDonkey.levels["DEBUG"])
      * 
-     * @returns logLevel as a number
+     * @return logLevel as a number
      */
     function setLogLevel(LEVEL = 0){
         logLevel = LEVEL;
@@ -52,8 +52,8 @@ module.exports = (function logDonkey(){
     }
 
     /**
-     * getLogLevel returns the logLevel that is currently set.
-     * @returns logLevel as a number
+     * getLogLevel return the logLevel that is currently set.
+     * @return {number} logLevel as a number
      */
     function getLogLevel(){
         return logLevel
@@ -63,47 +63,55 @@ module.exports = (function logDonkey(){
      * error logs an error if the logLevel is set to log errors
      * 
      * @param  {...any} args -- whatever gets passed will be logged as the error
+     * @return {string} arguments passed in with error concatenated
      */
     function error(...args){
-        if(loglevel < ERROR)
+        if(logLevel < ERROR)
             return
 
-        return console.error.bind(global.console)
+        console.error("error: ", ...args)
+        return `error: ${[...args]}`
     }
 
     /**
-     * warning logs a warning if the logLevel is set to log warnings
+     * warn logs a warning if the logLevel is set to log warnings
      * 
      * @param  {...any} args -- whatever gets passed in will be logged as a warning
+     * @return {string} arguments passed in with warn concatenated
      */
-    function warning(...args){
-        if(logLevel < WARNING)
+    function warn(...args){
+        if(logLevel < WARN)
             return
 
-        console.warning("warning: ", ...args)
+        console.warn("warn: ", ...args)
+        return `warn: ${[...args]}`
     }
 
     /**
      * info logs as info is logLevel is set to log info
      * 
      * @param  {...any} args -- whatever gets passed in will be logged as info
+     * @return {string} arguments passed in with info concatenated
      */
     function info(...args){
         if(logLevel < INFO)
             return
 
         console.info("info: ", ...args)
+        return `info: ${[...args]}`
     }
 
     /**
      * debug logs passed in arguments as debug, but only if the logLevel is set to DEBUG
      * 
      * @param  {...any} args -- whatever is passed in will logged as debug
+     * @return {string} arguments passed in with debug concatenated
      */
     function debug(...args){
         if(logLevel < DEBUG)
             return
 
         console.debug("debug: ", ...args)
+        return `debug: ${[...args]}`
     }
 })()

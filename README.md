@@ -1,6 +1,10 @@
 # logDonkey
 a simple logging tool that logs based on a set log level
 
+### install
+``` npm i log-donkey ```
+
+### example
 
 ```javascript
 // set the log level
@@ -19,3 +23,13 @@ logDonkey.info("logging some info");
 logDonkey.debug("this is a debug message");
 ```
 
+### LogLevels
+```
+ERROR - prints ERROR
+
+WARN - prints ERROR and WARN
+
+INFO - prints INFO, WARN, and ERROR
+
+DEBUG - prints DEBUG, INFO, WARN, and ERROR
+```

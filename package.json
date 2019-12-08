@@ -1,6 +1,6 @@
 {
   "name": "log-donkey",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "a simple logging tool that logs based on a set log level ",
   "main": "logDonkey.js",
   "scripts": {

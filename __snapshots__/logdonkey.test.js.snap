@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing basic logs should log debug 1`] = `
+"debug: logging to debug,some more stuffz,
+
+xxx
+more debug here"
+`;
+
+exports[`Testing basic logs should log error 1`] = `"error: some stuff in here,    another thing"`;
+
+exports[`Testing basic logs should log info 1`] = `
+"info: logging to info,some more stuffz,
+
+
+more info here"
+`;
