@@ -17,9 +17,21 @@ module.exports = (function logDonkey(){
     let logLevel = ERROR; // default logLevel is ERROR
 
     const levels = {
+        /**
+         * ERROR - prints ERROR
+         */
         ERROR,
+        /**
+         * WARN - prints ERROR and WARN
+         */
         WARN,
+        /**
+         * INFO - prints INFO, WARN, and ERROR
+         */
         INFO,
+        /**
+         * DEBUG - prints DEBUG, INFO, WARN, and ERROR 
+         */
         DEBUG
     }
 
