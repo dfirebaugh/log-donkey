@@ -7,6 +7,8 @@ xxx
 more debug here"
 `;
 
+exports[`Testing basic logs should log error 1`] = `"error: some stuff in here,    another thing"`;
+
 exports[`Testing basic logs should log info 1`] = `
 "info: logging to info,some more stuffz,
 

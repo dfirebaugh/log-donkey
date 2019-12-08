@@ -14,9 +14,9 @@ describe("Testing setLogLevel!", function(){
 })
 
 describe("Testing basic logs", function(){
-    // it("should log error", function (){
-    //     expect(log.error("some stuff in here", "    another thing")).toMatchSnapshot();
-    // })
+    it("should log error", function (){
+        expect(log.error("some stuff in here", "    another thing")).toMatchSnapshot();
+    })
     it("should log warn", function(){
         expect(log.warn("should log warn", "some more things here"));
     })
